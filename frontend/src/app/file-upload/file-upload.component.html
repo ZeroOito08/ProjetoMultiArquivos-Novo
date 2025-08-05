@@ -1,0 +1,12 @@
+<div>
+  <h3>Upload de Múltiplos Arquivos</h3>
+  <input type="file" multiple (change)="onFileSelected($event)">
+  <button (click)="uploadFiles()">Enviar Arquivos</button>
+
+  <div *ngIf="selectedFiles.length > 0">
+    <h4>Arquivos Selecionados:</h4>
+    <ul>
+      <li *ngFor="let file of selectedFiles">{{ file.name }} ({{ file.size / 1024 / 1024 | number:'1.2-2' }} MB)</li>
+    </ul>
+  </div>
+</div>
